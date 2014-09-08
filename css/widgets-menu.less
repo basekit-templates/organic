@@ -1,0 +1,335 @@
+// MENU WIDGETS =============================================================================================
+// ======= Widget: Menu section
+.widget.menusections {
+	.menu-section-list {
+		text-align: center;
+		li {
+			margin: 0 0.5em 0;
+		}
+	}	
+}
+
+// ======= Widget: Menu
+@bp-menu-compact: ~"only screen and (max-width : 940px)";
+@bp-menu-mobile: ~"only screen and (max-width : 640px)";
+
+.widget.menu {
+	.block-widget;
+	background-color: transparent;
+	margin-top: 0;
+	box-shadow: none;
+	.main {
+		background: lighten(@color-swatch1, 10%);
+		margin-top: (@w-spacing * 0.3);
+		margin-bottom: (@w-spacing * 0.3);
+		box-shadow: 0px 2px 0px 0px rgba(0,0,0,0.06);
+		padding-bottom: (@w-spacing * 1);
+		&:first-of-type {
+			margin-top: 0;
+		}
+		
+		@media @mobile {
+			padding-bottom: 20px;
+			margin-bottom: 20px;
+		}
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+	// Menu Header
+	.menu-header {
+		text-align: center;
+		padding: 0;
+		position: relative;
+		.w_vertical_spacing;
+		
+		.menu-name-background {
+			.menu-name {
+				font-family: @font-swatch8-font-family;
+				border-bottom: none;
+				margin-bottom: 0;
+				padding: 0;
+			}
+		}
+		.menu-description {
+			
+		}
+	}
+	.menu-items, .menu-items.odd {
+		padding: 0 35px;
+		column-gap: 0;
+		-moz-column-gap:0;
+		-webkit-column-gap: 0;
+		column-count: 1;
+		-moz-column-count: 1;
+		-webkit-column-count: 1;
+		text-align: center;
+		@media @bp-menu-compact {
+			padding: 0 15px;
+		}
+	}
+	
+	
+	// MENU ITEM
+	.menu-item {
+		padding: 0 35px;
+		margin-bottom: 70px;
+		text-align: center;
+		display: inline-block;
+		width: 33%;
+		vertical-align: top;
+		@media @bp-menu-compact {
+			margin-bottom: 40px;
+			width: 49%;
+		}
+		@media @mobile {
+			display: block;
+			width: auto;
+
+		}
+		// Title
+		.menu-item-name {
+			padding: 0.7em 0;
+			font-family: @font-swatch8-font-family;
+			font-size: @font-swatch2-font-size;
+			color: @color-swatch4;
+			text-align: center;
+			@media @tablet {
+				font-size: (@font-swatch2-font-size * 0.8);
+			}
+			@media @mobile {
+				font-size: (@font-swatch2-font-size * 0.7);
+			}
+		}
+		// Image
+		.menu-item-image-wrap {
+			background-size: 0;
+			margin-bottom: 0.7em;
+				       
+			img {
+				display: block;
+				margin: 0 auto;
+				max-width: 80%;
+				height: auto;
+				@media @mobile {
+					max-width: 60%;
+				}
+			}
+		}
+		// Price
+		.menu-item-price {
+			margin-bottom: 0.5em;
+			.standard-price {
+				text-align: center;
+				
+				padding: 0 0.25em;
+				padding-bottom: 0.2em;
+				display: inline-block;
+				border-top: 1px solid fade(@color-swatch2, 30%);
+				border-bottom: 1px solid fade(@color-swatch2, 30%);
+			}
+		}
+	
+		// Description
+		.menu-item-description {
+			font-family:  @font-swatch5-font-family;
+			font-size: (@font-swatch5-font-size * 1);
+			
+			
+		}
+		// Nutritions
+		.menu-item-nutritional-title {
+			font-size: (@font-swatch5-font-size * 0.8);
+			font-family:  @font-swatch5-font-family;
+			line-height: 1.2;
+			
+			
+		}
+		.menu-item-nutritional-prop, .menu-section-item-dietary-props {
+			font-size: (@font-swatch5-font-size * 0.8);
+			font-family:  @font-swatch5-font-family;
+			line-height: 1.2;
+			
+		}
+		.menu-item-nutritional-prop {
+			
+		}
+		// Dietary props
+		.menu-section-item-dietary-props {
+			.dietary-icon {
+				&:before {
+					content: '';
+					font-size: 1em;
+					width: 0.5em;
+					height: 0.5em;
+					background: @color-swatch2;
+					display: inline-block;
+					vertical-align: middle;
+					border-radius: 20px;
+					line-height: 1;
+				}
+			}
+		}
+		// Promoted item
+		&.menu-item-promoted {
+			border: 1px solid fade(@color-swatch2, 20%);
+			padding-bottom: 1.4em;
+			.menu-item-name {
+				
+			}
+		}	
+	}
+	// ---- Sub Section
+	.menu-subsection {
+		padding: 0;
+		margin: 0 35px 45px;
+
+		.menu-subsection-wrapper {
+			border: 2px solid fade(@color-swatch5, 20%);		
+			.menu-subsection-header {
+				text-align: center;
+				margin-bottom: 1em;
+				padding: 0 1em;
+				border-bottom: 2px solid fade(@color-swatch5, 20%);
+				
+				.menu-subsection-name {
+					font-family: @font-swatch8-font-family;
+					font-size: @font-swatch2-font-size;
+					line-height: @font-swatch2-line-height;
+					color: @color-swatch4;
+					padding: 1em 0;
+
+					@media @mobile {
+						font-size: (@font-swatch2-font-size * 0.6);	
+						line-height: (@font-swatch2-font-size * 0.6);	
+					}
+				}
+				.menu-subsection-description {
+					font-size: (@font-swatch5-font-size * 0.88);
+					margin-top: -1em;
+					padding-bottom: 1em;
+				}
+			}
+
+			ol.menu-items {
+				-webkit-column-count: 1;
+				-moz-column-count: 1;
+				column-count: 1;
+				@media @tablet {
+					-webkit-column-count: 1;
+					-moz-column-count: 1;
+					column-count: 1;
+				}
+			}
+			
+			// Promoted sub section items
+			&.menu-subsection-promoted {
+				border: 2px solid @color-swatch2;
+
+				.menu-subsection-header {
+					border-bottom: 2px solid @color-swatch2;
+					.menu-subsection-name {
+
+						position: relative;
+					}
+				}
+				.menu-items {
+					.menu-item {
+
+						// Title
+						.menu-item-name {
+							
+						}
+						// Price
+						.menu-item-price {
+							.standard-price {
+
+							}
+						}
+						// Description
+						.menu-item-description {
+							margin-left: 0;
+							margin-top: 0.3em;
+						}
+						// Nutritions
+						.menu-item-nutritional-title {
+							margin-left: 0;
+						}
+						.menu-item-nutritional-prop, .menu-section-item-dietary-props {
+							margin-left: 0;
+						}
+						.menu-item-nutritional-prop {
+							
+						}
+					}
+				}		
+			}
+		
+			// Normal sub section items
+			.menu-items {
+				padding: 0;
+				@media @tablet {
+					-webkit-column-count: 2;
+					-moz-column-count: 2;
+					column-count: 2;
+				}
+				@media @mobile {
+					-webkit-column-count: 1;
+					-moz-column-count: 1;
+					column-count: 1;
+				}
+				.menu-item {
+					display: inline-block;
+					vertical-align: top;
+					// Title
+					.menu-item-name {
+						font-size: (@font-swatch2-font-size * 0.8);
+						line-height: (@font-swatch2-line-height * 0.8);
+						@media @tablet {
+							font-size: (@font-swatch2-font-size * 0.8);
+							line-height: (@font-swatch2-line-height * 0.8);
+						}
+						@media @mobile {
+							font-size: (@font-swatch3-font-size * 0.7);
+							line-height: (@font-swatch2-line-height * 0.7);
+						}
+					}
+				
+					// Price
+					.menu-item-price {
+						.standard-price {
+							margin-left: 0;
+							position: relative;
+						}
+					}
+				
+					// Description
+					.menu-item-description {
+						margin-left: 0;
+						margin-top: 0.3em;
+					}
+					// Nutritions
+					.menu-item-nutritional-title {
+						margin-left: 0;
+					}
+					.menu-item-nutritional-prop, .menu-section-item-dietary-props {
+						margin-left: 0;
+					}
+					.menu-item-nutritional-prop {
+						
+					}
+				}
+			}
+		}
+	}
+	// Menu info
+	.menu-info {
+		border-top: 1px solid fade(@color-swatch5, 20%);
+		margin: 0 35px;
+		padding: 1em 0 0 0;
+		text-align: center;
+		@media @mobile {
+			margin: 0 16px;
+		}
+	}
+}

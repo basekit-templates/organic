@@ -1,0 +1,20 @@
+{% if pages|length > 1 %}
+{{widget('extendednavigation', 'navigationheader', {"align":"center"})|raw}}
+{% endif %}
+
+<div class="header">
+	<div class="profile_widgets group1">
+		{{widget('profile', 'w_profile_1', { 'profileType':'address' })|raw}}
+		{{widget('profile', 'w_profile_2', { 'profileType':'email', "showTplWidget":"0" })|raw}}
+	</div>
+
+	<div class="profile_widgets group2">
+		{{widget('profile', 'w_profile_3', { 'profileType':'phone' })|raw}}
+		{{widget('profile', 'w_profile_3', { 'profileType':'email' })|raw}}
+	</div>
+
+	<div class="company">
+		{{widget('logo', 'w_logo', {"defaultlogo": asset('images/logo.png')})|raw}}
+		{{widget('companyname', 'w_companyname', {"business": "profile", "align":"center"})|raw}}
+	</div>
+</div>

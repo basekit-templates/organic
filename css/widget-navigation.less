@@ -1,0 +1,349 @@
+// Widget: Extended Navigation
+
+// Reset Editor aligning
+div.widget .extendednavigation ul.align-right, div.widget.extendednavigation ul.align-right {
+	float: none;
+}
+
+
+// Nav
+.widget.extendednavigation {
+	background: lighten(@color-swatch1, 20%);
+	
+	&:before {
+		content: "";
+		display: block;
+		height: 2px;
+		background-color: darken(@color-swatch1, 7%);
+		position: absolute;
+		bottom: 0px;
+		left: 0px;
+		right: 0px;
+	}
+
+	@media @tablet {
+		min-height: 48px;
+	}
+	@media @mobile {
+		min-height: 42px;
+	}
+
+	.extendednavigation {
+		font-size: 0;
+		@media @tablet {
+			// BS reset
+			padding-top: 0;
+		}
+		@media @mobile {
+		}
+		& > ul {
+			// Removes spaces between inline items
+			font-size: 0;
+			@media @tablet {
+				display: block;
+				-webkit-transition: all 0.25s ease;
+				-moz-transition: all 0.25s ease;
+				-o-transition: all 0.25s ease;
+				transition: all 0.25s ease;
+				position: fixed;
+				z-index: 2000;
+				-webkit-transform: rotateX(90deg);
+				-moz-transform: rotateX(90deg);
+				-o-transform: rotateX(90deg);
+				-ms-transform: rotateX(90deg);
+				transform: rotateX(90deg);
+			}
+		}
+		& > ul.open {
+			@media @tablet {
+				height: 100%;
+				
+				background: fade(@color-swatch1, 92%);
+				max-height: 100%;
+				overflow-y: scroll;
+
+				-webkit-transform: rotateX(0deg);
+				-moz-transform: rotateX(0deg);
+				-o-transform: rotateX(0deg);
+				-ms-transform: rotateX(0deg);
+				transform: rotateX(0deg);
+			}
+		}
+		& > ul > li {
+			// Overlaps items' borders
+			position: relative;
+			top: -1px;
+			@media @tablet {
+				margin-left: 0;
+				top: 0;
+			}
+		}
+	}
+
+
+	// ---- Menu Item
+	ul li, ul li.folder {
+		position: relative;
+		white-space: normal;
+
+		@media @tablet {
+			right: 0;
+			border-bottom: none;
+			padding: 0;
+		}
+		
+		// Item Text
+		& > .text, a .text {
+			padding: 0.4em 1.2em;
+			color: @color-swatch6;
+			// border-top: 1px solid darken(@color-swatch1, 7%);
+			// border-bottom: 1px solid darken(@color-swatch1, 7%);
+			display: inline-block;
+			position: relative;
+			@media @tablet {
+				border: none;
+				border-bottom: 1px solid darken(@color-swatch1, 7%);
+				display: block;
+			}
+
+			// underline
+			&:before {
+				content: "";
+				display: block;
+				height: 2px;
+				background-color: darken(@color-swatch1, 7%);
+				position: absolute;
+				bottom: -1px;
+				left: 0px;
+				right: 0px;
+				-webkit-transition: all 0.25s ease-in-out;
+				-moz-transition: all 0.25s ease-in-out;
+				-o-transition: all 0.25s ease-in-out;
+				transition: all 0.25s ease-in-out;
+				@media @tablet {
+					display: none;
+				}
+			}
+			&:hover:before {
+				background-color: darken(@color-swatch6, 3%);
+			}
+			&:hover {
+				color: @color-swatch6;
+			}
+		}
+
+		&.selected .text {
+			background: lighten(@color-swatch6, 3%);
+			color: lighten(@color-swatch1, 20%);
+			border: 1px solid lighten(@color-swatch6, 3%);
+
+			@media @tablet {
+				background-color: transparent;
+				color: darken(@color-swatch6, 40%);
+				border: none;
+				border-bottom: 1px solid darken(@color-swatch1, 7%);
+			}
+
+			&:before {
+				background-color: darken(@color-swatch6, 3%);
+
+			}
+			&:hover {
+				color: lighten(@color-swatch1, 20%);
+				@media @tablet {
+					color: @color-swatch6;
+				}
+			}
+		}
+
+		// Link
+		a {
+			position: relative;
+			padding: 0;
+			color: @color-swatch6;
+		
+		}
+	}
+
+
+	// ---- Folder item
+	ul li.folder {
+		-webkit-transition: background-color 0.25s ease-in-out;
+		-moz-transition: background-color 0.25s ease-in-out;
+		-o-transition: background-color 0.25s ease-in-out;
+		transition: background-color 0.25s ease-in-out;
+		margin-right: 0;
+
+		@media @tablet {
+			border-radius: 0px;
+		}
+
+		&:hover > .text:before {
+			background: darken(@color-swatch6, 3%);
+		}
+
+		&:hover > .text {
+			@media @tablet {
+				color: lighten(@color-swatch1, 20%);
+				border-bottom-color: darken(@color-swatch6, 3%);;
+			}
+		}
+
+
+
+		// Arrow Icon
+		&:after {
+			// Hiding BS icon
+			display: none;
+		}
+
+		ul li .text {
+			border: none;
+			&:before {
+				display: none;
+			}
+		}
+
+		// Custom Drop Down icon
+		& > .text:after {
+			display: inline-block;
+			content: "";
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 7px 5.5px 0 5.5px;
+			border-color: @color-swatch6 transparent transparent transparent;
+			margin-left: 0.5em;
+			position: relative;
+			top: -3px;
+		}
+
+		&:hover > .text:after {
+			@media @tablet {
+				border-color: lighten(@color-swatch1, 20%) transparent transparent transparent;	
+			}
+			
+		}
+
+		// hovered folder item
+		&:hover {
+			color: @color-swatch6;
+			@media @tablet {
+				background-color: lighten(@color-swatch6, 3%);
+			}
+		}
+	}
+
+	// ---- Open folder
+	ul li:hover ul {
+		background: lighten(@color-swatch1, 20%);
+		min-width: 100%;
+		max-width: 300px;
+		z-index: 2000;
+		margin: 0;
+		border-top: 2px solid darken(@color-swatch6, 3%);
+		position: absolute;
+		@media @tablet {
+			border: 6px solid lighten(@color-swatch6, 3%);
+			border-top: none;
+			position: relative;
+		}
+
+		li {
+			top: 0;
+			border-bottom: 1px solid darken(@color-swatch1, 7%);
+			&:last-child {
+				border-bottom: none;
+			}
+			&:hover {
+				border-bottom: 1px solid darken(@color-swatch6, 3%);
+				&:last-child {
+					@media @tablet {
+						border-bottom: none;
+					}
+				}
+				@media @tablet {
+					border-bottom-color: darken(@color-swatch1, 7%);
+				}
+			}
+		}
+	}
+
+
+	// ---- Collapsible nav
+	
+	// Trigger Icon: Hamburger
+	a.pull {
+		// Dessktop
+	    display: none;
+	    @media @tablet {
+	        display: block;
+	        width: 100%;
+	        height: 46px;
+			background: lighten(@color-swatch6, 3%);
+			position: fixed;
+			left: 0;
+			right: 0;
+			top: 0;
+			z-index: 2000;
+	        &:hover {
+	           cursor: pointer;
+	        }
+	        // Hamburger Bun and Meat
+	        &:after, &:before {
+	            content: '';
+	            position: absolute;
+	            width: 26px;
+	            height: 3px;
+	            background: @color-swatch7;
+	            top: 15px;
+	            left: 50%;
+	            margin: 0 0 0 -13px;
+	            box-shadow: 0 6px 0 @color-swatch7, 0 12px 0 @color-swatch7;
+
+	            -webkit-transition: all 0.3s ease-in-out;
+				-moz-transition: all 0.3s ease-in-out;
+				-o-transition: all 0.3s ease-in-out;
+				transition: all 0.3s ease-in-out;
+	        }
+	        &:before {
+	        }
+        }
+        @media @mobile {
+        	height: 40px;
+        	&:after, &:before {
+	            top: 13px;
+	        }
+        }
+    }
+}
+
+// Trigger Icon: Cross
+.widget.extendednavigation {
+	ul.open + a.pull {
+		@media @tablet {
+    	 	// Cross lines
+    	 	&:after, &:before {
+    	 		  box-shadow: none;
+    	 		  margin: 5px 0 0 -13px;
+    	 	}
+    	 	// Cross Line 1
+    	 	&:after {
+	            -webkit-transform: rotate(45deg);
+				-moz-transform: rotate(45deg);
+				-o-transform: rotate(45deg);
+				-ms-transform: rotate(45deg);
+				transform: rotate(45deg);
+    	 	}
+    	 	// Cross Line 2
+    	 	&:before {
+    	 		display: block;
+	            -webkit-transform: rotate(-45deg);
+				-moz-transform: rotate(-45deg);
+				-o-transform: rotate(-45deg);
+				-ms-transform: rotate(-45deg);
+				transform: rotate(-45deg);
+    	 	}
+    	}
+	}
+}
