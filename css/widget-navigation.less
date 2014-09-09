@@ -1,9 +1,12 @@
 // Widget: Extended Navigation
 
 // Reset Editor aligning
-div.widget .extendednavigation ul.align-right, div.widget.extendednavigation ul.align-right {
-	float: none;
+div.widget.extendednavigation .extendednavigation ul.align-right, div.widget.extendednavigation .extendednavigation ul.align-right,
+div.widget.extendednavigation .extendednavigation ul.align-left, div.widget.extendednavigation .extendednavigation ul.align-left {
+	float: none !important;
 }
+
+
 
 
 // Nav
@@ -34,33 +37,41 @@ div.widget .extendednavigation ul.align-right, div.widget.extendednavigation ul.
 			// BS reset
 			padding-top: 0;
 		}
-		@media @mobile {
-		}
 		& > ul {
 			// Removes spaces between inline items
 			font-size: 0;
+
 			@media @tablet {
+				height: 0;
+				overflow: hidden;
 				display: block;
-				-webkit-transition: all 0.25s ease;
-				-moz-transition: all 0.25s ease;
-				-o-transition: all 0.25s ease;
-				transition: all 0.25s ease;
+				-webkit-transition: 		all 0.25s ease;
+				-moz-transition: 			all 0.25s ease;
+				-o-transition: 				all 0.25s ease;
+				transition: 				all 0.25s ease;
 				position: fixed;
 				z-index: 2000;
-				-webkit-transform: rotateX(90deg);
-				-moz-transform: rotateX(90deg);
-				-o-transform: rotateX(90deg);
-				-ms-transform: rotateX(90deg);
-				transform: rotateX(90deg);
+				-webkit-transform: 			rotateX(90deg);
+				-moz-transform: 			rotateX(90deg);
+				-o-transform: 				rotateX(90deg);
+				-ms-transform: 				rotateX(90deg);
+				transform: 					rotateX(90deg);
+				-webkit-transform-origin: 	0% 0%;
+				-moz-transform-origin: 		0% 0%;
+				-o-transform-origin: 		0% 0%;
+				-ms-transform-origin: 		0% 0%;
+				transform-origin: 			0% 0%;
+				opacity: 					0;
 			}
 		}
 		& > ul.open {
 			@media @tablet {
 				height: 100%;
-				
+				display: block;
 				background: fade(@color-swatch1, 92%);
 				max-height: 100%;
 				overflow-y: scroll;
+				opacity: 1;
 
 				-webkit-transform: rotateX(0deg);
 				-moz-transform: rotateX(0deg);
@@ -185,7 +196,7 @@ div.widget .extendednavigation ul.align-right, div.widget.extendednavigation ul.
 		&:hover > .text {
 			@media @tablet {
 				color: lighten(@color-swatch1, 20%);
-				border-bottom-color: darken(@color-swatch6, 3%);;
+				border-bottom-color: @color-swatch6;
 			}
 		}
 
@@ -244,8 +255,6 @@ div.widget .extendednavigation ul.align-right, div.widget.extendednavigation ul.
 		border-top: 2px solid darken(@color-swatch6, 3%);
 		position: absolute;
 		@media @tablet {
-			border: 6px solid lighten(@color-swatch6, 3%);
-			border-top: none;
 			position: relative;
 		}
 
