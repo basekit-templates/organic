@@ -51,9 +51,12 @@
 	margin-top: (@w-spacing * 0.3);
 	margin-bottom: (@w-spacing * 0.3);
 	box-shadow: 0px 2px 0px 0px rgba(0,0,0,0.06);
-	&:first-of-type {
+	&:first-child {
 		margin-top: -50px;
 		padding-top: (@w-spacing * 0.7);
+		.widget.responsivecolumns & {
+			margin-top: 0;
+		}
 		@media @tablet {
 			padding-top: (@w-spacing * 0.5);
 		}
@@ -61,7 +64,15 @@
 			padding-top: (@w-spacing * 0.2);
 		}
 
-		&.widget.youtube, &.widget.map, &.widget.image, &.widget.gallery, &.widget.responsiveslideshow, &.widget.blogpostlist, &.widget.blogpost,&.widget.menu, &.widget.soundcloud, &.widget.map {
+		&.widget.youtube, 
+		&.widget.map, 
+		&.widget.image, 
+		&.widget.gallery, 
+		&.widget.responsiveslideshow, 
+		&.widget.blogpostlist, 
+		&.widget.blogpost,
+		&.widget.menu, 
+		&.widget.map {
 			padding-top: 0 !important;
 		}
 	}
@@ -76,6 +87,15 @@
 
 .form-block {
 	background-color: darken(@color-swatch1, 4%);
+}
+
+
+
+.widget.responsivecolumns {
+	.block-widget;
+	background-color: transparent;
+	box-shadow: none;
+	padding-top: 0 !important;
 }
 
 
@@ -192,7 +212,16 @@
 
 
 
-
+.content.widget + .content.widget {
+	margin-top: -(@w-spacing * 0.9);
+	padding-top: 0 !important;
+	@media @tablet {
+		margin-top: -(@w-spacing * 0.8);
+	}
+	@media @mobile {
+		margin-top: -(@w-spacing * 0.6);
+	}
+}
 
 // ======= Widget: Content
 .content.widget {
@@ -303,13 +332,20 @@
 	.expand {
 		.more, .less {
 			background-color: @color-swatch3;
-			border-radius: 50px;
 			color: @color-swatch1;
 			padding: 0.2em 0.7em;
 			margin-top: 5px;
+			cursor: pointer;
+			box-shadow: inset 0px -2px 0px 0px rgba(0,0,0,0.19);
+			-webkit-transition: all 0.1s linear;
+			-moz-transition: all 0.1s linear;
+			-o-transition: all 0.1s linear;
+			transition: all 0.1s linear;
+
 			&:hover {
+				background-color: darken(@color-swatch3, 10%);
 				text-decoration: none;
-				background-color: darken(@color-swatch2, 10%);
+				box-shadow: inset 0px -60px 0px 0px rgba(0, 0, 0, 0.2);
 			}
 		}
 	}
@@ -409,6 +445,8 @@
 			// Deliberately not using a color swatch
 			background-color:  #fff;
 			box-shadow: inset 0px -2px 0px 0px rgba(0,0,0,0.19);
+			top: 50%;
+			margin-top: -30px;
 			
 			&:after {
 				display: block;
@@ -465,14 +503,7 @@
 					background-color: darken(@color-swatch3, 10%);
 				}
 			}
-			
-			@media @mobile {
-				-webkit-transform: scale(0.75);
-				-moz-transform: scale(0.75);
-				-o-transform: scale(0.75);
-				-ms-transform: scale(0.75);
-				transform: scale(0.75);
-			}
+		
 			&:after {
 				font-size: 16px;
 				@media @tablet {
@@ -485,7 +516,7 @@
 		// (Appears even without content)
 		text-align: center;
 		@color-swatch-desc: lighten(@color-swatch1, 10%);
-		background-color: fade(@color-swatch-desc, 70%);
+		background-color: fade(@color-swatch-desc, 90%);
 		left: 10px;
 		right: 10px;
 		bottom: 10px;
@@ -600,6 +631,20 @@
 	.clearfix;
 
 	ul.twitter {
+		// Twitter icon
+		&:before {
+			content: '';
+			display: block;
+			border-bottom: 1px solid lighten(@color-swatch5, 40%);
+			height: 19px;
+			background-image: image('/images/ico-twitter.png'); 
+			background-position: center;
+			background-size: auto 19px;
+			background-repeat: no-repeat;
+			padding-bottom: 40px;
+			margin-bottom: 30px;
+			margin-top: -20px;
+		}
 		li {
 			position: relative;
 			min-height: @twitterProfilePicSize;
@@ -951,16 +996,6 @@
 		img {
 			display: inline-block;
 			border-bottom: 4px solid @color-swatch4;
-			&.widget-align-left {
-				border-bottom: none;
-				border-right: 4px solid @color-swatch4;
-				margin-right: 1em;
-			}
-			&.widget-align-right {
-				border-bottom: none;
-				border-left: 4px solid @color-swatch4;
-				margin-left: 1em;
-			}
 		}
 	}
 	span.image-title {
