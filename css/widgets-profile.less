@@ -131,9 +131,7 @@
 			align-items: center;
 		}
 
-		fieldset {
-
-			
+		fieldset {			
 			input.email {
 				background-color: lighten(@color-swatch1, 10%);
 				min-width: 180px;
@@ -156,18 +154,19 @@
 				-ms-flex-item-align: auto;
 				align-self: auto;
 				
-			
-
 				@media @mobile {
-					min-height: 26px;
-					line-height: 26px;
-					height: 26px;
+					min-height: 28px;
+					line-height: 28px;
+					height: 28px;
+				}
+
+				.footer & {
+					border-top: 1px solid #CECECE;
+					border-left: 1px solid #CECECE;
 				}
 			}
 			button.btn {
-				height: (@font-swatch7-font-size * 2);
 				line-height: (@font-swatch7-font-size * 2);
-
 				// Flex child
 				-webkit-box-ordinal-group: 1;
 				-moz-box-ordinal-group: 1;
@@ -183,11 +182,8 @@
 				-ms-flex-item-align: auto;
 				align-self: auto;
 
-				&:hover {
-					 background-color: @color-swatch1;
-				}
+			
 				@media @mobile {
-					height: 28px;
 					line-height: 28px;
 				}
 			}
@@ -223,9 +219,29 @@
 
 	// ProfileBar: Number
 	.bk-profile-phone {
-		// white-space: nowrap;
+		&:before {
+			content: '';
+			display: inline-block;
+			vertical-align: middle;
+			background-image: image('/images/ico-tel.png'); 
+			width: 15px;
+			height: 16px;
+			background-size: contain;
+			margin-right: 0.4em;
+		}
 	}
-
+	.bk-profile-email {
+		a:before {
+			content: '';
+			display: inline-block;
+			vertical-align: middle;
+			background-image: image('/images/ico-mail.png'); 
+			width: 18px;
+			height: 13px;
+			background-size: contain;
+			margin-right: 0.4em;
+		}
+	}
 }
 
 
