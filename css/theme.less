@@ -1,5 +1,41 @@
+body, html {
+	height: 100%;
+}
+
 body {
 	-webkit-font-smoothing: subpixel-antialiased;
+}
+
+.widget.extendednavigation .bk-overlay {
+	left: 0;
+	width: auto;
+}
+
+.pageWrapper {
+	display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+	min-height: 100%;
+}
+
+.pt-default {
+	-webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
 }
 
 .width {
@@ -18,9 +54,21 @@ body {
 
 @bp-header-compact: ~"only screen and (max-width : 660px)";
 
+.header, .footer {
+	& .widget.profile {
+		@media @tablet {
+			margin: 10px;
+		}
+		@media @bp-header-compact {
+			margin: 5px;
+		}
+	}
+}
+
 .header {
 	.clearfix;
 	.width;
+	width: 100%;
 	padding-top: 50px;
 	padding-bottom: 20px;
 	font-size: 0;
@@ -79,7 +127,6 @@ body {
 	    @media @tablet {
 	    	width: 50%;
 	    	float: left;
-	    	padding: 10px;
 	    }
 
 	    @media @bp-header-compact {
@@ -155,11 +202,16 @@ body {
 
 .widget.logo {
 	text-align: center;
-
+	.logo {
+		@media @desktop {
+			margin: 0 10px;
+		}
+	}
 	.logo, img {
 		line-height: 0;
 	}
 	img {
+		max-height: 300px;
 		@media @tablet {
 			max-width: 80%;
 		}
@@ -182,7 +234,7 @@ body {
 	position: relative;
 	padding: 80px 0 0 0;
 	@media @mobile {
-		padding: 16px 0 0 0;
+		padding: 50px 0 0 0;
 	}
 	// gradient horizontal line
 	&:before {
@@ -239,6 +291,7 @@ body {
 		padding: 0;
 		a {
 			font-size: (@font-swatch10-font-size * 0.75);
+			line-height: (@font-swatch10-line-height * 0.75);
 			@media @mobile {
 				font-size: (@font-swatch10-font-size * 0.6);
 			}
@@ -303,7 +356,6 @@ body {
 	    @media @tablet {
 	    	width: 50%;
 	    	float: left;
-	    	padding: 10px;
 	    }
 
 	    @media @bp-header-compact {
@@ -378,9 +430,21 @@ body {
 // ================================================================================================
 .widget.feature {
 	margin-top: 30px;
+	.feature-bgimg .content, .feature-bgimg {
+		min-height: 450px;
+		.w_horizontal_spacing;
+		@media @tablet {
+			min-height: 350px;
+		}
+		@media @mobile {
+			min-height: 250px;
+			height: 250px;
+		}
+	}
 	.feature-bgimg .content {
 		vertical-align: top;
 		text-align: center;
+		padding-bottom: 50px;
 	}
 	h2 {
 		padding: 0;
