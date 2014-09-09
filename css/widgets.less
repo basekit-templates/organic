@@ -9,6 +9,7 @@
 	margin: 0;
 	padding-top: 1px;
 	padding-bottom: 1px;
+	clear: both;
 	&:first-of-type {
 		@media @bp-wigets-compact {
 			padding-top: (@w-spacing * 0.4);
@@ -43,6 +44,8 @@
 		padding-bottom: (@w-spacing * 0.2);
 	}
 }
+
+
 
 
 // Vertical spacing for block widgets
@@ -97,6 +100,17 @@
 	box-shadow: none;
 	padding-top: 0 !important;
 }
+
+// cancelling floats in responsive columns
+.responsive-col {
+	.columns-two-right &,
+	.columns-two-left & {
+		float: none;
+		display: block;
+		width: auto;
+	}	
+}
+
 
 
 
@@ -630,6 +644,8 @@
 	.w_horizontal_spacing;
 	.clearfix;
 
+
+
 	ul.twitter {
 		// Twitter icon
 		&:before {
@@ -646,12 +662,16 @@
 			margin-top: -20px;
 		}
 		li {
+			.responsive-col;
 			position: relative;
 			min-height: @twitterProfilePicSize;
 			padding-bottom: 30px;
 			width: 49%;
 			margin-right: 2%;
 			float: left;
+
+
+
 			@media @tablet {
 				width: auto;
 				float: none;
