@@ -153,6 +153,7 @@
 
 // ============================================================================================================================== 
 // Widget: e-com Product List
+@bp-product-detail-compact: ~"only screen and (max-width : 1130px)";
 
 .widget.ecomproductslist {
 	.block-widget;
@@ -178,9 +179,7 @@
 				background: lighten(@color-swatch1, 10%);
 				margin-bottom: (@w-spacing * 0.3);
 				box-shadow: 0px 2px 0px 0px rgba(0,0,0,0.06);
-				.w_horizontal_spacing;
-				padding-top: 10px;
-				padding-bottom: 10px;
+				padding: 10px 30px;
 				text-align: center;
 				
 
@@ -190,11 +189,18 @@
 					vertical-align: bottom;
 					text-align: left;
 					margin-bottom: 0;
+					float: left;
+					@media @bp-product-detail-compact {
+						float: none;
+					}
 					@media @mobile {
 						display: block;
 						margin-bottom: 10px;
 						margin-right: 0;
 					}
+
+
+
 					label {
 						display: block;
 						font-size: (@font-swatch5-font-size * 0.8);
@@ -210,8 +216,9 @@
 	                &.productlist-search {
 	                	display: block;
 	                	text-align: center;
-	                	margin: 20px auto;
+	                	margin: 25px auto 20px;
 	                	max-width: 500px;
+	                	float: right;
 
 	                	// Flex
 	                	display: -webkit-box;
@@ -243,8 +250,14 @@
 					    -ms-flex-align: center;
 					    align-items: center;
 
+					    @media @bp-product-detail-compact {
+							float: none;
+							margin: 20px auto;
+						}
+
 					    @media @mobile {
 					    	margin-top: 26px;
+					    	float: none;
 					    }
 
 					    label {
