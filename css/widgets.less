@@ -104,11 +104,22 @@
 // cancelling floats in responsive columns
 .responsive-col {
 	.columns-two-right &,
-	.columns-two-left & {
+	.columns-two-left &,
+	.columns-three-left &,
+	.columns-three-middle &,
+	.columns-three-right &,
+	.columns-four-first &,
+	.columns-four-second &,
+	.columns-four-third &,
+	.columns-four-fourth &
+	{
 		float: none;
 		display: block;
 		width: auto;
-	}	
+		&:nth-last-child(-n+2) {
+			padding-bottom: 30px;
+		}
+	}
 }
 
 
@@ -645,7 +656,6 @@
 	.clearfix;
 
 
-
 	ul.twitter {
 		// Twitter icon
 		&:before {
@@ -750,6 +760,21 @@
 	}
 }
 
+// Twitter widget in a small column
+.widget.twitter {
+	.columns-four-first &,
+	.columns-four-second &,
+	.columns-four-third &,
+	.columns-four-fourth & {
+		ul.twitter li .twitter-profile-pic {
+			width: (@twitterProfilePicSize / 2);
+			height: (@twitterProfilePicSize / 2);
+		}
+		ul.twitter li .twitter-content {
+			margin-left: (@twitterProfilePicSize / 2 + 6);
+		}
+	}
+}
 
 
 // ======= Widget: Gallery
