@@ -5,23 +5,37 @@
 
 h1 {
 	@media @tablet {
-		font-size: (@font-swatch1-font-size * 0.85);
-		line-height: (@font-swatch1-line-height * 0.85);
-	}
-	@media @mobile {
 		font-size: (@font-swatch1-font-size * 0.75);
 		line-height: (@font-swatch1-line-height * 0.75);
+	}
+	@media @mobile {
+		font-size: (@font-swatch1-font-size * 0.70);
+		line-height: (@font-swatch1-line-height * 0.70);
+	}
+	.columns-four-first &,
+	.columns-four-second &,
+	.columns-four-third &,
+	.columns-four-fourth & {
+		font-size: (@font-swatch1-font-size * 0.65);
+		line-height: (@font-swatch1-line-height * 0.65);
 	}
 }
 
 h2 {
 	@media @tablet {
-		font-size: (@font-swatch2-font-size * 0.9);
-		line-height: (@font-swatch2-line-height * 0.9);
-	}
-	@media @mobile {
 		font-size: (@font-swatch2-font-size * 0.8);
 		line-height: (@font-swatch2-line-height * 0.8);
+	}
+	@media @mobile {
+		font-size: (@font-swatch2-font-size * 0.7);
+		line-height: (@font-swatch2-line-height * 0.7);
+	}
+	.columns-four-first &,
+	.columns-four-second &,
+	.columns-four-third &,
+	.columns-four-fourth & {
+		font-size: (@font-swatch2-font-size * 0.65);
+		line-height: (@font-swatch2-line-height * 0.65);
 	}
 }
 
@@ -33,6 +47,13 @@ h3 {
 	@media @mobile {
 		font-size: (@font-swatch3-font-size * 0.8);
 		line-height: (@font-swatch3-line-height * 0.8);
+	}
+	.columns-four-first &,
+	.columns-four-second &,
+	.columns-four-third &,
+	.columns-four-fourth & {
+		font-size: (@font-swatch3-font-size * 0.65);
+		line-height: (@font-swatch3-line-height * 0.65);
 	}
 }
 
