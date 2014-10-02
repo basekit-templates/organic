@@ -775,6 +775,9 @@
 
 // Twitter widget in a small column
 .widget.twitter {
+	.columns-three-left &,
+	.columns-three-middle &,
+	.columns-three-right &,
 	.columns-four-first &,
 	.columns-four-second &,
 	.columns-four-third &,
@@ -785,6 +788,25 @@
 		}
 		ul.twitter li .twitter-content {
 			margin-left: (@twitterProfilePicSize / 2 + 6);
+		}
+	}
+	.columns-three-left &,
+	.columns-three-middle &,
+	.columns-three-right &,
+	.columns-four-first &,
+	.columns-four-second &,
+	.columns-four-third &,
+	.columns-four-fourth & {
+		padding-left: 16px !important;
+		padding-right: 16px !important;
+
+		ul.twitter li .twitter-profile-pic {
+			position: relative;
+			float: none;
+		}
+		ul.twitter li .twitter-content {
+			margin-left: 0;
+			margin-top: 1em;
 		}
 	}
 }
