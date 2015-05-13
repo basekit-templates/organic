@@ -161,7 +161,10 @@ div.widget.extendednavigation .extendednavigation ul.align-left, div.widget.exte
 			}
 
 			&:after {
-				border-color:lighten(@color-swatch1, 20%) transparent transparent transparent;
+				border-color: lighten(@color-swatch1, 20%) transparent transparent transparent;
+				@media @tablet {
+					border-color: darken(@color-swatch6, 40%) transparent transparent transparent;
+				}
 			}
 
 			&:hover {
@@ -200,7 +203,7 @@ div.widget.extendednavigation .extendednavigation ul.align-left, div.widget.exte
 			background: darken(@color-swatch6, 3%);
 		}
 
-		&:hover > .text {
+		&:hover > .text, &.selected:hover > .text {
 			@media @tablet {
 				color: lighten(@color-swatch1, 20%);
 				border-bottom-color: @color-swatch6;
