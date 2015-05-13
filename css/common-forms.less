@@ -37,6 +37,8 @@
 	-moz-user-select: none;     /* Firefox all */
 	-ms-user-select: none;      /* IE 10+ */
 
+	-webkit-appearance: none;
+
 	line-height: (@font-swatch7-font-size * 2.5);
 
 	box-shadow: inset 0px -2px 0px 0px rgba(0,0,0,0.19);
@@ -51,7 +53,7 @@
 		padding: 0 1.2em;
 		font-size: (@font-swatch7-font-size * 0.75);
 		line-height: (@font-swatch7-font-size * 2);
-	} 
+	}
 
 	&:hover {
 		background-color: darken(@color-swatch3, 10%);
@@ -96,12 +98,13 @@
 	box-shadow: inset 0px -2px 0px 0px #CECECE;
 	color: @color-swatch5;
 	margin: 0;
+	-webkit-appearance: none;
 
 	@media only screen and (max-width : 460px) {
 		font-size: (@font-swatch7-font-size * 0.75);
 		height: (@font-swatch7-font-size * 2);
 		line-height: (@font-swatch7-font-size * 2);
-	} 
+	}
 
 	&:focus {
 		box-shadow: inset 0px -2px 0px 0px @color-swatch3;
@@ -116,7 +119,7 @@
 		line-height: (@font-swatch7-line-height * 0.5);
 		padding-top: 0.5em;
 		padding-bottom: 0.5em;
-	} 
+	}
 }
 
 // Labels
@@ -134,7 +137,7 @@
     @media only screen and (max-width : 460px) {
 		line-height: (@font-swatch4-line-height * 0.8);
 		font-size: (@font-swatch5-font-size * 0.8);
-	} 
+	}
 }
 
 
@@ -154,7 +157,7 @@
 		border: 1px solid @color-swatch3;
 		background-color: #fff;
 		color: @color-swatch5;
-		
+
 		border-radius: 0;
 		position: relative;
 		display: inline-block;
@@ -172,9 +175,9 @@
 		@media only screen and (max-width : 460px) {
 			font-size: (@font-swatch7-font-size * 0.75);
 			height: (@font-swatch7-font-size * 2);
-		} 
+		}
 
-	
+
 
 		&:focus {
 			border-color: @color-swatch2;
@@ -207,7 +210,7 @@ input::-moz-placeholder {  /* Firefox 19+ */
    color: fade(@color-swatch5, 50%);
 }
 
-input:-ms-input-placeholder {  
+input:-ms-input-placeholder {
    color: fade(@color-swatch5, 50%);
 }
 
