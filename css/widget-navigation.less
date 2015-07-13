@@ -11,18 +11,7 @@ div.widget.extendednavigation .extendednavigation ul.align-left, div.widget.exte
 
 // Nav
 .widget.extendednavigation {
-	background: lighten(@color-swatch1, 20%);
 
-	&:before {
-		content: "";
-		display: block;
-		height: 2px;
-		background-color: darken(@color-swatch1, 7%);
-		position: absolute;
-		bottom: 0px;
-		left: 0px;
-		right: 0px;
-	}
 
 	@media @tablet {
 		min-height: 48px;
@@ -33,6 +22,20 @@ div.widget.extendednavigation .extendednavigation ul.align-left, div.widget.exte
 
 	.extendednavigation {
 		font-size: 0;
+
+		background: lighten(@color-swatch1, 20%);
+
+		&:before {
+			content: "";
+			display: block;
+			height: 2px;
+			background-color: darken(@color-swatch1, 7%);
+			position: absolute;
+			bottom: 0px;
+			left: 0px;
+			right: 0px;
+		}
+
 		@media @tablet {
 			// BS reset
 			padding-top: 0;
