@@ -31,8 +31,17 @@ div.widget.extendednavigation .extendednavigation ul.align-left, div.widget.exte
 			padding-top: 0;
 		}
 		& > ul {
-			// Removes spaces between inline items
 			font-size: 0;
+			display: -ms-flexbox;
+			display: -webkit-flex;
+			display: flex;
+			-webkit-justify-content: center;
+			-ms-flex-pack: center;
+			justify-content: center;
+			-webkit-flex-wrap: wrap;
+			-ms-flex-wrap: wrap;
+			flex-wrap: wrap;
+
 
 			@media @tablet {
 				height: 0;
@@ -98,37 +107,21 @@ div.widget.extendednavigation .extendednavigation ul.align-left, div.widget.exte
 		& > .text, a .text {
 			padding: 0.4em 1.2em;
 			color: @color-swatch6;
-			// border-top: 1px solid darken(@color-swatch1, 7%);
-			// border-bottom: 1px solid darken(@color-swatch1, 7%);
-			display: block;
 			position: relative;
+			display: block;
+
+
 			@media @tablet {
 				border: none;
 				border-bottom: 1px solid darken(@color-swatch1, 7%);
 				display: block;
+				box-shadow: none;
 			}
 
-			// underline
-			&:before {
-				content: "";
-				display: block;
-				height: 2px;
-				background-color: darken(@color-swatch1, 7%);
-				position: absolute;
-				bottom: -1px;
-				left: 0px;
-				right: 0px;
-				-webkit-transition: all 0.25s ease-in-out;
-				-moz-transition: all 0.25s ease-in-out;
-				-o-transition: all 0.25s ease-in-out;
-				transition: all 0.25s ease-in-out;
-				@media @tablet {
-					display: none;
-				}
+			&:hover {
+				box-shadow: 0px 2px 0px 0px darken(@color-swatch6, 3%);
 			}
-			&:hover:before {
-				background-color: darken(@color-swatch6, 3%);
-			}
+
 			&:hover {
 				color: @color-swatch6;
 			}
