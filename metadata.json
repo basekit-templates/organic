@@ -1,6 +1,7 @@
 {
 	"name":"Organic",
 	"thumbnail":"organic.png",
+        "screenshot":"organic-screenshot.jpg",
 	"templateType":"standard",
 	"pageTypes": ["home"], 
 	"tags": {
