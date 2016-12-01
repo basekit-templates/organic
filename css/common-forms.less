@@ -4,6 +4,7 @@
 // Buttons
 .widget.feature .feature-bgimg .content button,
 .contactform button.btn,
+.advancedcontactform fieldset button,
 .widget.button button,
 .widget .btn,
 .widget.profile form button,
@@ -89,7 +90,10 @@
 .widget input[type="email"],
 .productlist-filter .productlist-search input,
 .signupform fieldset input,
-.widget.fonectacontactform input[type="text"] {
+.widget.fonectacontactform input[type="text"],
+.advancedcontactform form input[type=email], 
+.advancedcontactform form input[type=text],
+.advancedcontactform fieldset textarea {
 	background: #fff;
 	border: none;
 	border-radius: 0;
@@ -114,7 +118,8 @@
 }
 
 .contactform textarea,
-.widget.fonectacontactform textarea {
+.widget.fonectacontactform textarea,
+.advancedcontactform fieldset textarea {
 	line-height: (@font-swatch7-line-height * 0.7);
 	min-height: 10em;
 	@media only screen and (max-width : 460px) {
@@ -131,7 +136,9 @@
 .blog-search-form label,
 .widget.ecomcheckout .delivery label,
 .ecom-product-vartitle,
-.widget.fonectacontactform label {
+.widget.fonectacontactform label,
+.advancedcontactform .form-group>label,
+.advancedcontactform .option-list .option-item .label {
     font-family: @font-swatch4-font-family;
     font-size: @font-swatch5-font-size;
     font-weight: @font-swatch4-font-weight;
@@ -148,7 +155,8 @@
 // Selects
 .widget.ecomproductslist .productlist-filter,
 .widget.ecomcheckout .delivery,
-.widget.ecomproduct .ecom-product .ecom-product-info .ecom-product-variation
+.widget.ecomproduct .ecom-product .ecom-product-info .ecom-product-variation,
+.advancedcontactform form
 {
 	& select {
 		text-indent: 0.01px;
