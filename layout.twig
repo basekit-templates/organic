@@ -15,7 +15,7 @@
 	{% include "includes/head.twig" %}
 	{% include basekit.headScript %}
 </head>
-<body class="{{ page.backgroundClass }} {{ site.colorSwatch }}">
+<body class="{{ page.backgroundClass }} {{ site.colorSwatch }}" {{ isV10sSite ? 'id="migrated-site"' : '' }}>
 	<div class="pageWrapper">
 		{% include "includes/header.twig" %}
 		{% block content %}
