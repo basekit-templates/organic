@@ -1,5 +1,6 @@
 {
 	"name":"Organic",
+	"versionTenCompatible": 1,
 	"thumbnail":"organic.png",
         "screenshot":"organic-screenshot.jpg",
 	"templateType":"standard",
